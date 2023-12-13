@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubham Ranjan's Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+            overflow: auto;
+            max-height: 80vh;
+            /* Set a maximum height for scrolling */
+        }
+
+        header {
+            text-align: center;
+        }
+
+        .me {
+            max-width: 80px;
+            border-radius: 50%;
+        }
+
+        h1 {
+            margin: 10px 0;
+            color: #FFB300;
+            /* Golden Yellow */
+            font-size: 28px;
+        }
+
+        address {
+            font-style: normal;
+            color: #FF7043;
+            /* Deep Orange */
+            font-size: 14px;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        article {
+            margin-bottom: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #00171b;
+            /* Golden Yellow */
+        }
+
+        a {
+            color: #42A5F5;
+            /* Blue */
+        }
+
+        p {
+            line-height: 1.6;
+            color: #37474F;
+            /* Dark Gray */
+            font-size: 16px;
+        }
+
+        /* Background Animation */
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background: linear-gradient(45deg, #FFB300, #4FC3F7, #E57373);
+        }
+
+        /* Hide scrollbar */
+        ::-webkit-scrollbar {
+            width: 0;
+            /* Remove scrollbar space */
+            background: transparent;
+            /* Optional: just make scrollbar invisible */
+        }
+
+        /* Optional: show position indicator */
+        ::-webkit-scrollbar-thumb {
+            background: #FFB300;
+            /* color of the scroll thumb */
+        }
+
+        .name {
+            font-size: 56px;
+            margin: 0;
+            animation: slideIn 1s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Animation Script -->
+    <script>
+        window.onload = function () {
+            var canvas = document.createElement("canvas");
+            document.body.appendChild(canvas);
+            var ctx = canvas.getContext("2d");
+
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            var dots = [];
+            for (var i = 0; i < 50; i++) {
+                dots.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 2,
+                    vx: Math.random() - 0.5,
+                    vy: Math.random() - 0.5
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                for (var i = 0; i < dots.length; i++) {
+                    var dot = dots[i];
+
+                    dot.x += dot.vx;
+                    dot.y += dot.vy;
+
+                    if (dot.x < 0 || dot.x > canvas.width) dot.vx = -dot.vx;
+                    if (dot.y < 0 || dot.y > canvas.height) dot.vy = -dot.vy;
+
+                    ctx.beginPath();
+                    ctx.fillStyle = "#bbdefb";
+                    ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                requestAnimationFrame(draw);
+            }
+
+            draw();
+
+            window.addEventListener("resize", function () {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        };
+    </script>
+
+    <div class="container">
+        <header class="three columns">
+            <!-- <img src="" class="me" alt="Shubham's Photo"> -->
+            <h1 class="name">Shubham Ranjan</h1>
+            <p>
+                <a href="tel:+917073907033">+91 7073907033</a><br />
+            </p>
+            <address>
+                Bengaluru, India
+            </address>
+            <p>
+                <a href="mailto:shubhamranjan1303@gmail.com">shubhamranjan1303@gmail.com</a>
+            </p>
+        </header>
+        <div class="thirteen columns clearfix">
+            <section class="thirteen columns">
+                <article>
+                    <h2>Code Conductor: Navigating the Digital Symphony of Quality Assurance</h3>
+                        <p>Hey there, I'm Shubham — the resident QA Wizard and Code Tamer in this tech carnival. 🎪 With
+                            a keyboard as my wand and code as my spell, I've been conjuring quality and sprinkling
+                            automation magic for more than 4 years!</p>
+
+                        <h3>Why Hunt Bugs When You Can Automate Them Away?
+                    </h2>
+                    <p>I'm not your average QA. I'm on a quest to make software bugs vanish faster than a rabbit in a
+                        magician's hat. 🎩✨ Armed with Webdriver, Selenium, Appium, and a sprinkle of Python and
+                        JavaScript, I dance through code, turning testing into a rhythm only devs and I understand.</p>
+
+                    <h3>Building Bridges, Not Just Tests</h2>
+                        <p>QA isn't just about finding bugs; it's about building bridges between developers and quality.
+                            I'm fluent in the languages of collaboration, agile methodologies, and nerdy tech jokes. 🤓
+                            Let's break down silos and build a utopia where code and quality coexist harmoniously!</p>
+
+                        <h3>Beyond Code, There's Rainbow Debugging</h2>
+                            <p>When not untangling code knots, you can find me chasing rainbows and debugging clouds.
+                                Life's too short for boring tools and monochrome terminals—let's add a splash of color
+                                to our tech journey!</p>
+
+                            <h2>Code by Day, DJ by Night</h2>
+                            <p>By day, I'm coding quality; by night, I'm spinning tunes. Because why stop at automating
+                                tests when you can automate dance floors too? 🎶 Let's code during the day and party in
+                                binary at night!</p>
+                            <p>Ready for the magic? Let's automate the extraordinary! 🌟</p>
+
+                            <p><strong>Shubham Ranjan - QA Automation Engineer, Code Conjurer, Bug Banisher</strong></p>
+                </article>
+                <article>
+                    <header>
+                        <h1>Solution Integrator</h1>
+                        <span><a
+                                href="https://www.ericsson.com/en/about-us/company-facts/ericsson-worldwide/india">Ericsson</a></span>
+                        <span>
+                            <address>Bengaluru, India</address><time>2022 till date</time>
+                        </span>
+                    </header>
+                    <p>
+                        IWorking as a QA Automation Engineer at Ericsson, specializing in the telecom domain mobile and
+                        web application automation testing. My expertise extends to AWS services, Kubernetes,
+                        microservices, and MongoDB.
+                    </p>
+                </article>
+            </section>
+            <section class="thirteen columns">
+                <h1>Education</h1>
+                <article>
+                    <header>
+                        <h1>B-Tech Computer Science Engineering</h1>
+                        <span><a href="https://jecrcfoundation.com/">Jaipur Engineering College and Research
+                                Centre</a></span>
+                        <span>
+                            <address>Jaipur, India</address><time>2015 to 2019</time>
+                        </span>
+                    </header>
+                    <p class="gpa"><em>GPA</em> <strong>6.9</strong> / 10</p>
+                </article>
+            </section>
+            <section class="six columns">
+                <h1>Projects</h1>
+                <article>
+                    <header>
+                        <h1><a href="">CloudIDE</a></h1>
+                        <span><time>2018</time></span>
+                    </header>
+                    <p>
+                        Python-based web Integrated Development Environment (IDE) designed to operate within a
+                        containerized environment.
+                        This innovative solution allows users to request and deploy the web IDE dynamically through API
+                        calls. The containerization
+                        ensures a consistent and isolated environment, enhancing reliability and scalability for
+                        efficient development workflows.
+                    </p>
+                </article>
+            </section>
+        </div>
+    </div>
+
+</body>
+
+</html>
