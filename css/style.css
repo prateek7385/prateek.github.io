@@ -80,7 +80,7 @@ body {
 }
 
 a:link {
-    color: green;
+    color: pink;
     background-color: transparent;
     text-decoration: none;
   }
@@ -92,13 +92,13 @@ a:link {
   }
   
   a:hover {
-    color: red;
+    color: pink;
     background-color: transparent;
     text-decoration: underline;
   }
   
   a:active {
-    color: yellow;
+    color: pink;
     background-color: transparent;
     text-decoration: underline;
   }
